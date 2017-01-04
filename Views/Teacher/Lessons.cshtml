@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Lessons";
+}
+
+<select id="teachers">
+    <option value="bsokat">Barış Sokat</option>
+    <option value="fsokat">Filiz Sokat</option>
+    <option value="dsokat">Davut Sokat</option>
+</select>
+
+<input type="button" id="listLessons" value="List Lessons" />
+<br />
+
+<div id="lessons"></div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#listLessons').click(function () {
+            var teacher = $("#teachers option:selected").val();
+            $.getJSON('../teacher/' + teacher + '/lessons').done(function (lessonsList) {
+                var lessons = "";
+                $.each(lessonsList, function (key, lesson) {
+                    lessons += "Lesson Code: " + lesson.Code + "<br />";
+                });
+                $('#lessons').html(lessons);
+            })
+        });
+    })
+</script>
