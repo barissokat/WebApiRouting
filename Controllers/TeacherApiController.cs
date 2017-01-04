@@ -8,6 +8,7 @@ using WebApiRouting.Models;
 
 namespace WebApiRouting.Controllers
 {
+    [RoutePrefix("teacher")]
     public class TeacherApiController : ApiController
     {
         private List<Lesson> _lessons = new List<Lesson>
@@ -21,7 +22,7 @@ namespace WebApiRouting.Controllers
         };
 
         [HttpGet]
-        [Route("teacher/{name}/lessons")]
+        [Route("{name}/lessons")]
         public IEnumerable<Lesson> Lessons(string name)
         {
             return _lessons.Where(d => d.Teacher == name);
