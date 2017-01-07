@@ -10,6 +10,26 @@ Bu projede **yönlendirme** konusu kavranabilmesi için, ürün ve ders modeller
 	- Convention Based Routing
 	- Attribute Based Routing
 
+## Eklenen veya Güncellenen Dosyalar
+
+- App_Start
+	1. WebApiConfig.cs
+- Controller 
+	1. ProductApiController.cs
+	2. ProductController.cs
+	3. TeacherApiController.cs
+	4. TeacherController.cs
+- Filters
+	1. LogAttribute.cs
+- Models
+	1. Lesson.cs
+	2. Product.cs
+- Views
+	1. Product
+		- Index.cshtml
+	2. Teacher
+		- Lessons.cshtml
+
 ## Yönlendirmelerin Test Edilmesi
 
 #### Convention Based Routing
